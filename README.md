@@ -1,15 +1,60 @@
 # AlertBar
 
-[![CI Status](http://img.shields.io/travis/Jin Sasaki/AlertBar.svg?style=flat)](https://travis-ci.org/Jin Sasaki/AlertBar)
 [![Version](https://img.shields.io/cocoapods/v/AlertBar.svg?style=flat)](http://cocoapods.org/pods/AlertBar)
 [![License](https://img.shields.io/cocoapods/l/AlertBar.svg?style=flat)](http://cocoapods.org/pods/AlertBar)
 [![Platform](https://img.shields.io/cocoapods/p/AlertBar.svg?style=flat)](http://cocoapods.org/pods/AlertBar)
 
-## Usage
+An easy alert on status bar.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+![demo](./etc/demo.gif)
+
+## Usage
+### Import
+```
+import AlertBar
+```
+
+### Show alert message
+#### Success
+```
+AlertBar.show(.Success, message: "This is a Success message.")
+```
+
+#### Error
+```
+AlertBar.show(.Error, message: "This is an Error message.")
+```
+
+#### Notice
+```
+AlertBar.show(.Notice, message: "This is a Notice message.")
+```
+
+#### Warning
+```
+AlertBar.show(.Warning, message: "This is a Warning message.")
+```
+
+#### Info
+```
+AlertBar.show(.Info, message: "This is an Info message.")
+```
+
+#### Custom
+```
+AlertBar.show(.Custom(UIColor.lightGrayColor(), UIColor.blackColor()), message: "This is a Custom message.")
+```
+
+### Custom alert duration
+```
+AlertBar.show(.Success, message: "This is a Success message.", duration: 10)
+```
 
 ## Requirements
+
+- Swift 2.0
+- iOS 8.0
+- ARC
 
 ## Installation
 
@@ -22,7 +67,7 @@ pod "AlertBar"
 
 ## Author
 
-Jin Sasaki, aysm47@gmail.com
+Jin Sasaki, sasakky_j@gmail.com
 
 ## License
 

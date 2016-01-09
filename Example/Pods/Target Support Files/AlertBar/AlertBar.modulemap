@@ -1,0 +1,6 @@
+framework module AlertBar {
+  umbrella header "AlertBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

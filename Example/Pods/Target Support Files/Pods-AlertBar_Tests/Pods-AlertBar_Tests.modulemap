@@ -1,0 +1,6 @@
+framework module Pods_AlertBar_Tests {
+  umbrella header "Pods-AlertBar_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

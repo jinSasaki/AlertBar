@@ -7,18 +7,31 @@
 //
 
 import UIKit
+import AlertBar
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBAction func tapSuccess(sender: AnyObject) {
+        AlertBar.show(.Success, message: "This is a Success message.")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func tapError(sender: AnyObject) {
+        AlertBar.show(.Error, message: "This is an Error message.", duration: 3)
     }
-
+    
+    @IBAction func tapNotice(sender: AnyObject) {
+        AlertBar.show(.Notice, message: "This is a Notice message.")
+    }
+    
+    @IBAction func tapWarning(sender: AnyObject) {
+        AlertBar.show(.Warning, message: "This is a Warning message.")
+    }
+    
+    @IBAction func tapInfo(sender: AnyObject) {
+        AlertBar.show(.Info, message: "This is an Info message.")
+    }
+    
+    @IBAction func tapCustom(sender: AnyObject) {
+        AlertBar.show(.Custom(UIColor.lightGrayColor(), UIColor.blackColor()), message: "This is a Custom message.", duration: 5)
+    }
 }
-
