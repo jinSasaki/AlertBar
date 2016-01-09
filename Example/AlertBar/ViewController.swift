@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapNotice(sender: AnyObject) {
-        AlertBar.show(.Notice, message: "This is a Notice message.")
+        AlertBar.show(.Notice, message: "This is a Notice message.", completion: { () -> Void in
+            print("Noticed")
+        })
     }
     
     @IBAction func tapWarning(sender: AnyObject) {
