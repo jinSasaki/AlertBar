@@ -33,11 +33,11 @@ public enum AlertBarType {
             }
         }
     }
-    var fontColor: UIColor {
+    var textColor: UIColor {
         get {
             switch self {
-            case .Custom(_, let backgroundColor):
-                return backgroundColor
+            case .Custom(_, let textColor):
+                return textColor
             default:
                 return AlertBarHelper.UIColorFromRGB(0xFFFFFF)
             }
@@ -66,7 +66,7 @@ public class AlertBar: UIView {
         let alertBar = AlertBar(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: statusBarHeight))
         alertBar.messageLabel.text = message
         alertBar.backgroundColor = type.backgroundColor
-        alertBar.messageLabel.textColor = type.fontColor
+        alertBar.messageLabel.textColor = type.textColor
         AlertBar.alertBars.append(alertBar)
         
         let window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: statusBarHeight))
@@ -95,6 +95,12 @@ public class AlertBar: UIView {
                         completion?()
                 })
             })
+    }
+    
+    public class func showError(error: NSError, duration: Double = 2, completion: (() -> Void)? = nil) {
+        let code = error.code
+        let localizedDescription = error.localizedDescription
+        self.show(.Error, message: "(\(code)) " + localizedDescription)
     }
 }
 
