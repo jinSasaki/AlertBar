@@ -92,6 +92,7 @@ public class AlertBar: UIView {
                         }
                         // To hold window instance
                         window.hidden = true
+                        completion?()
                 })
             })
     }
