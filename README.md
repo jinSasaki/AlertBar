@@ -39,9 +39,17 @@ AlertBar accepts to custom alert duration.
 AlertBar.show(.Success, message: "This is a Success message.", duration: 10)
 ```
 
+### Custom Options
+#### TextAlignment
+AlertBar accepts to custom text alignment.  
+NOTE: This option is global.
+```
+AlertBar.textAlignment = .Center
+```
+
 ## Requirements
 
-- Swift 2.0
+- Swift 2.2
 - iOS 8.0
 - ARC
 

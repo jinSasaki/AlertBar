@@ -46,6 +46,7 @@ public enum AlertBarType {
 }
 
 public class AlertBar: UIView {
+    public static var textAlignment: NSTextAlignment = .Left
     static var alertBars: [AlertBar] = []
     
     let messageLabel = UILabel()
@@ -76,6 +77,7 @@ public class AlertBar: UIView {
         let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
         let alertBar = AlertBar(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: statusBarHeight))
         alertBar.messageLabel.text = message
+        alertBar.messageLabel.textAlignment = AlertBar.textAlignment
         alertBar.backgroundColor = type.backgroundColor
         alertBar.messageLabel.textColor = type.textColor
         AlertBar.alertBars.append(alertBar)

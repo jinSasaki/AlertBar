@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '848D9F01B3D8DE11C2656486'
+               BlueprintIdentifier = '5C86F377984122E5CE006B84'
                BlueprintName = 'AlertBar'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'AlertBar.framework'>
