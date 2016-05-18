@@ -59,6 +59,17 @@ public class AlertBar: UIView {
         messageLabel.frame = CGRect(x: 2, y: 2, width: frame.width - 4, height: frame.height - 4)
         messageLabel.font = UIFont.systemFontOfSize(12)
         self.addSubview(messageLabel)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.handleRotate(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    dynamic private func handleRotate(notification: NSNotification) {
+        self.removeFromSuperview()
+        AlertBar.alertBars = []
     }
     
     public class func show(type: AlertBarType, message: String, duration: Double = 2, completion: (() -> Void)? = nil) {
@@ -69,9 +80,29 @@ public class AlertBar: UIView {
         alertBar.messageLabel.textColor = type.textColor
         AlertBar.alertBars.append(alertBar)
         
-        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: statusBarHeight))
+        let width = UIScreen.mainScreen().bounds.width
+        let height = UIScreen.mainScreen().bounds.height
+
+        let baseView = UIView(frame: UIScreen.mainScreen().bounds)
+        baseView.userInteractionEnabled = false
+        baseView.addSubview(alertBar)
+
+        let window: UIWindow
+        let orientation = UIApplication.sharedApplication().statusBarOrientation
+        if orientation.isLandscape {
+            window = UIWindow(frame: CGRect(x: 0, y: 0, width: height, height: width))
+            let sign: CGFloat = orientation == .LandscapeLeft ? -1 : 1
+            let d = fabs(width - height) / 2
+            baseView.transform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(sign * CGFloat(M_PI) / 2), sign * d, sign * d)
+        } else {
+            window = UIWindow(frame: CGRect(x: 0, y: 0, width: width, height: height))
+            if orientation == .PortraitUpsideDown {
+                baseView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+            }
+        }
+        window.userInteractionEnabled = false
         window.windowLevel = UIWindowLevelStatusBar + 1 + CGFloat(AlertBar.alertBars.count)
-        window.addSubview(alertBar)
+        window.addSubview(baseView)
         window.makeKeyAndVisible()
         
         alertBar.transform = CGAffineTransformMakeTranslation(0, -statusBarHeight)
