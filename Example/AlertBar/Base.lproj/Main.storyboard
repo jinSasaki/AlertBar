@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vxi-DD-XfR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vxi-DD-XfR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,67 +17,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KIt-2k-2dP">
-                                <rect key="frame" x="8" y="120" width="584" height="380"/>
+                                <rect key="frame" x="8" y="64" width="584" height="512"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGa-Pc-zGU">
                                         <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
-                                        <animations/>
                                         <state key="normal" title="Success"/>
                                         <connections>
                                             <action selector="tapSuccess:" destination="vxi-DD-XfR" eventType="touchUpInside" id="kHj-xX-K8i"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDw-uQ-d26">
-                                        <rect key="frame" x="0.0" y="70" width="584" height="30"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="96.5" width="584" height="30"/>
                                         <state key="normal" title="Error"/>
                                         <connections>
                                             <action selector="tapError:" destination="vxi-DD-XfR" eventType="touchUpInside" id="BX6-z0-ryp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ce-bQ-F5B">
-                                        <rect key="frame" x="0.0" y="140" width="584" height="30"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="193" width="584" height="30"/>
                                         <state key="normal" title="Notice"/>
                                         <connections>
                                             <action selector="tapNotice:" destination="vxi-DD-XfR" eventType="touchUpInside" id="N2m-ml-d2v"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRq-M2-DGV">
-                                        <rect key="frame" x="0.0" y="210" width="584" height="30"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="289" width="584" height="30"/>
                                         <state key="normal" title="Warning"/>
                                         <connections>
                                             <action selector="tapWarning:" destination="vxi-DD-XfR" eventType="touchUpInside" id="5vS-cT-CId"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ix2-NE-vN8">
-                                        <rect key="frame" x="0.0" y="280" width="584" height="30"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="385.5" width="584" height="30"/>
                                         <state key="normal" title="Info"/>
                                         <connections>
                                             <action selector="tapInfo:" destination="vxi-DD-XfR" eventType="touchUpInside" id="Vjk-YE-tJJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwn-WD-BVR">
-                                        <rect key="frame" x="0.0" y="350" width="584" height="30"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="482" width="584" height="30"/>
                                         <state key="normal" title="Custom"/>
                                         <connections>
                                             <action selector="tapCustom:" destination="vxi-DD-XfR" eventType="touchUpInside" id="S4I-6Z-c9E"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                             </stackView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KIt-2k-2dP" firstAttribute="leading" secondItem="BX9-mH-Zl2" secondAttribute="leading" constant="8" id="RHZ-YP-VfW"/>
-                            <constraint firstItem="KIt-2k-2dP" firstAttribute="top" secondItem="Ve2-ZO-bZg" secondAttribute="bottom" constant="100" id="q0E-jW-4Ix"/>
+                            <constraint firstItem="KIt-2k-2dP" firstAttribute="top" secondItem="Ve2-ZO-bZg" secondAttribute="bottom" constant="44" id="q0E-jW-4Ix"/>
                             <constraint firstAttribute="trailing" secondItem="KIt-2k-2dP" secondAttribute="trailing" constant="8" id="tHM-Sz-G5a"/>
-                            <constraint firstItem="ZAt-k4-0YB" firstAttribute="top" secondItem="KIt-2k-2dP" secondAttribute="bottom" constant="100" id="ufC-cf-H7w"/>
+                            <constraint firstItem="ZAt-k4-0YB" firstAttribute="top" secondItem="KIt-2k-2dP" secondAttribute="bottom" constant="24" id="ufC-cf-H7w"/>
                         </constraints>
                     </view>
                 </viewController>

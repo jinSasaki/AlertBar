@@ -36,4 +36,8 @@ class ViewController: UIViewController {
     @IBAction func tapCustom(sender: AnyObject) {
         AlertBar.show(.Custom(UIColor.lightGrayColor(), UIColor.blackColor()), message: "This is a Custom message.", duration: 5)
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
+    }
 }
