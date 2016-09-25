@@ -8,27 +8,27 @@
 import UIKit
 
 public enum AlertBarType {
-    case Success
-    case Error
-    case Notice
-    case Warning
-    case Info
-    case Custom(UIColor, UIColor)
+    case success
+    case error
+    case notice
+    case warning
+    case info
+    case custom(UIColor, UIColor)
     
     var backgroundColor: UIColor {
         get {
             switch self {
-            case .Success:
+            case .success:
                 return AlertBarHelper.UIColorFromRGB(0x4CAF50)
-            case .Error:
+            case .error:
                 return AlertBarHelper.UIColorFromRGB(0xf44336)
-            case .Notice:
+            case .notice:
                 return AlertBarHelper.UIColorFromRGB(0x2196F3)
-            case .Warning:
+            case .warning:
                 return AlertBarHelper.UIColorFromRGB(0xFFC107)
-            case .Info:
+            case .info:
                 return AlertBarHelper.UIColorFromRGB(0x009688)
-            case .Custom(let backgroundColor, _):
+            case .custom(let backgroundColor, _):
                 return backgroundColor
             }
         }
@@ -36,7 +36,7 @@ public enum AlertBarType {
     var textColor: UIColor {
         get {
             switch self {
-            case .Custom(_, let textColor):
+            case .custom(_, let textColor):
                 return textColor
             default:
                 return AlertBarHelper.UIColorFromRGB(0xFFFFFF)
@@ -45,8 +45,8 @@ public enum AlertBarType {
     }
 }
 
-public class AlertBar: UIView {
-    public static var textAlignment: NSTextAlignment = .Left
+open class AlertBar: UIView {
+    open static var textAlignment: NSTextAlignment = .left
     static var alertBars: [AlertBar] = []
     
     let messageLabel = UILabel()
@@ -58,87 +58,87 @@ public class AlertBar: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         messageLabel.frame = CGRect(x: 2, y: 2, width: frame.width - 4, height: frame.height - 4)
-        messageLabel.font = UIFont.systemFontOfSize(12)
+        messageLabel.font = UIFont.systemFont(ofSize: 12)
         self.addSubview(messageLabel)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.handleRotate(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleRotate(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    dynamic private func handleRotate(notification: NSNotification) {
+    dynamic fileprivate func handleRotate(_ notification: Notification) {
         self.removeFromSuperview()
         AlertBar.alertBars = []
     }
     
-    public class func show(type: AlertBarType, message: String, duration: Double = 2, completion: (() -> Void)? = nil) {
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
-        let alertBar = AlertBar(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: statusBarHeight))
+    open class func show(_ type: AlertBarType, message: String, duration: Double = 2, completion: (() -> Void)? = nil) {
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let alertBar = AlertBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: statusBarHeight))
         alertBar.messageLabel.text = message
         alertBar.messageLabel.textAlignment = AlertBar.textAlignment
         alertBar.backgroundColor = type.backgroundColor
         alertBar.messageLabel.textColor = type.textColor
         AlertBar.alertBars.append(alertBar)
         
-        let width = UIScreen.mainScreen().bounds.width
-        let height = UIScreen.mainScreen().bounds.height
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
 
-        let baseView = UIView(frame: UIScreen.mainScreen().bounds)
-        baseView.userInteractionEnabled = false
+        let baseView = UIView(frame: UIScreen.main.bounds)
+        baseView.isUserInteractionEnabled = false
         baseView.addSubview(alertBar)
 
         let window: UIWindow
-        let orientation = UIApplication.sharedApplication().statusBarOrientation
+        let orientation = UIApplication.shared.statusBarOrientation
         if orientation.isLandscape {
             window = UIWindow(frame: CGRect(x: 0, y: 0, width: height, height: width))
-            let sign: CGFloat = orientation == .LandscapeLeft ? -1 : 1
+            let sign: CGFloat = orientation == .landscapeLeft ? -1 : 1
             let d = fabs(width - height) / 2
-            baseView.transform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(sign * CGFloat(M_PI) / 2), sign * d, sign * d)
+            baseView.transform = CGAffineTransform(rotationAngle: sign * CGFloat(M_PI) / 2).translatedBy(x: sign * d, y: sign * d)
         } else {
             window = UIWindow(frame: CGRect(x: 0, y: 0, width: width, height: height))
-            if orientation == .PortraitUpsideDown {
-                baseView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+            if orientation == .portraitUpsideDown {
+                baseView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
             }
         }
-        window.userInteractionEnabled = false
+        window.isUserInteractionEnabled = false
         window.windowLevel = UIWindowLevelStatusBar + 1 + CGFloat(AlertBar.alertBars.count)
         window.addSubview(baseView)
         window.makeKeyAndVisible()
         
-        alertBar.transform = CGAffineTransformMakeTranslation(0, -statusBarHeight)
-        UIView.animateWithDuration(0.2,
+        alertBar.transform = CGAffineTransform(translationX: 0, y: -statusBarHeight)
+        UIView.animate(withDuration: 0.2,
             animations: { () -> Void in
-                alertBar.transform = CGAffineTransformIdentity
+                alertBar.transform = CGAffineTransform.identity
             }, completion: { _ in
-                UIView.animateWithDuration(0.2,
+                UIView.animate(withDuration: 0.2,
                     delay: duration,
-                    options: .CurveEaseInOut,
+                    options: UIViewAnimationOptions(),
                     animations: { () -> Void in
-                        alertBar.transform = CGAffineTransformMakeTranslation(0, -statusBarHeight)
+                        alertBar.transform = CGAffineTransform(translationX: 0, y: -statusBarHeight)
                     },
                     completion: { (animated: Bool) -> Void in
                         alertBar.removeFromSuperview()
-                        if let index = AlertBar.alertBars.indexOf(alertBar) {
-                            AlertBar.alertBars.removeAtIndex(index)
+                        if let index = AlertBar.alertBars.index(of: alertBar) {
+                            AlertBar.alertBars.remove(at: index)
                         }
                         // To hold window instance
-                        window.hidden = true
+                        window.isHidden = true
                         completion?()
                 })
             })
     }
     
-    public class func showError(error: NSError, duration: Double = 2, completion: (() -> Void)? = nil) {
+    open class func showError(_ error: NSError, duration: Double = 2, completion: (() -> Void)? = nil) {
         let code = error.code
         let localizedDescription = error.localizedDescription
-        self.show(.Error, message: "(\(code)) " + localizedDescription)
+        self.show(.error, message: "(\(code)) " + localizedDescription)
     }
 }
 
 internal class AlertBarHelper {
-    class func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+    class func UIColorFromRGB(_ rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
