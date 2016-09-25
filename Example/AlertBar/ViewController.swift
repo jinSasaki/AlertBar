@@ -11,33 +11,33 @@ import AlertBar
 
 class ViewController: UIViewController {
     
-    @IBAction func tapSuccess(sender: AnyObject) {
-        AlertBar.show(.Success, message: "This is a Success message.")
+    @IBAction func tapSuccess(_ sender: AnyObject) {
+        AlertBar.show(.success, message: "This is a Success message.")
     }
     
-    @IBAction func tapError(sender: AnyObject) {
+    @IBAction func tapError(_ sender: AnyObject) {
         AlertBar.showError(NSError(domain: "Page not found", code: 404, userInfo: nil), duration: 3)
     }
     
-    @IBAction func tapNotice(sender: AnyObject) {
-        AlertBar.show(.Notice, message: "This is a Notice message.", completion: { () -> Void in
+    @IBAction func tapNotice(_ sender: AnyObject) {
+        AlertBar.show(.notice, message: "This is a Notice message.", completion: { () -> Void in
             print("Noticed")
         })
     }
     
-    @IBAction func tapWarning(sender: AnyObject) {
-        AlertBar.show(.Warning, message: "This is a Warning message.")
+    @IBAction func tapWarning(_ sender: AnyObject) {
+        AlertBar.show(.warning, message: "This is a Warning message.")
     }
     
-    @IBAction func tapInfo(sender: AnyObject) {
-        AlertBar.show(.Info, message: "This is an Info message.")
+    @IBAction func tapInfo(_ sender: AnyObject) {
+        AlertBar.show(.info, message: "This is an Info message.")
     }
     
-    @IBAction func tapCustom(sender: AnyObject) {
-        AlertBar.show(.Custom(UIColor.lightGrayColor(), UIColor.blackColor()), message: "This is a Custom message.", duration: 5)
+    @IBAction func tapCustom(_ sender: AnyObject) {
+        AlertBar.show(.custom(UIColor.lightGray, UIColor.black), message: "This is a Custom message.", duration: 5)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return false
     }
 }

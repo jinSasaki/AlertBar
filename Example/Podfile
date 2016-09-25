@@ -1,12 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'AlertBar_Example', :exclusive => true do
+target 'AlertBar_Example' do
   pod "AlertBar", :path => "../"
 end
 
-target 'AlertBar_Tests', :exclusive => true do
+target 'AlertBar_Tests' do
   pod "AlertBar", :path => "../"
-
-  
 end
