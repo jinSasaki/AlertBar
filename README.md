@@ -49,11 +49,12 @@ AlertBar.textAlignment = .Center
 
 ## Requirements
 
-- Swift 2.2
+- Swift 3.0
 - iOS 8.0
 - ARC
 
 ## Installation
+[!] AlertBar 0.2.0 requires CocoaPods 1.1.0
 
 AlertBar is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
