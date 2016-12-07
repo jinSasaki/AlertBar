@@ -1,5 +1,5 @@
 PODS:
-  - AlertBar (0.2.0)
+  - AlertBar (0.3.0)
 
 DEPENDENCIES:
   - AlertBar (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AlertBar: 3e6a111420c95e278e23e6fbe6668469e54c0be3
+  AlertBar: 1e17f957b65582b7a1610e6bc2eb9c169e9466df
 
 PODFILE CHECKSUM: d0b6cb35dafa29919b756447265020670bcb91c2
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1

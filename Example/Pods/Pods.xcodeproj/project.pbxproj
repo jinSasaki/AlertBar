@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0155D7BA05F6329354DE48EB41AD6BA3 /* AlertBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C06DA8397A6D36C2EA3FAE067E818 /* AlertBar-dummy.m */; };
-		2E90228D7F66FBDCD9DC5CA2FAA415C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		52041D43C9FA5BC7ADE66AC2E0E392BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		52B8A10EB91EC62A179F3227864F93E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		5A3DBB57C2F0DEA13C028A98FDF9D21E /* AlertBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 004F3DDBC807DB751CEE2E5CB2724E7C /* AlertBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AB26352DEBA95E1D55F510477CBDC4E /* Pods-AlertBar_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB4D9FA0F1C52870516AB9B16C05A17 /* Pods-AlertBar_Tests-dummy.m */; };
+		7AA82A72C19E49E34814692A18AFB78B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		871B876172463E4C59D48620FCFF8F5F /* AlertBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4ECAC7A6FDE6071A65A449FF306520 /* AlertBar.swift */; };
+		893824D5A9BA4D2C85153EA08E9F88A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		9EC6D013B1A7CD98A6162EE4E42C93F2 /* Pods-AlertBar_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9090D6CBC0028FB715F1E8A95E31565E /* Pods-AlertBar_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAC2FDE34C12E9D87CE9E7A5D40D95D6 /* Pods-AlertBar_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2583ED297B742EEF36010F78A85A18 /* Pods-AlertBar_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E920A7708A2BF62350F2673C56C59F3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		FAEB6BA2EB5EAA777A4314A2EECEB646 /* Pods-AlertBar_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53911A4E0401520A89DC497EA05648EB /* Pods-AlertBar_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,7 @@
 		ADEE9A59ABCB216DD05B0178078B7E97 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF4D6DFA57341CB845865F04DF3992DD /* Pods-AlertBar_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AlertBar_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B2CAA8321B44E0173D56584DDC3904EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D2DF3B86C1B6BDA5F0D7313AA3463827 /* Pods-AlertBar_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AlertBar_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		DC59D3C5135976E1D007A0B31D173447 /* Pods_AlertBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlertBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E899B657990107B765E02C8FCEDA6E7D /* Pods-AlertBar_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AlertBar_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E90228D7F66FBDCD9DC5CA2FAA415C3 /* Foundation.framework in Frameworks */,
+				893824D5A9BA4D2C85153EA08E9F88A3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E920A7708A2BF62350F2673C56C59F3F /* Foundation.framework in Frameworks */,
+				52B8A10EB91EC62A179F3227864F93E8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52041D43C9FA5BC7ADE66AC2E0E392BA /* Foundation.framework in Frameworks */,
+				7AA82A72C19E49E34814692A18AFB78B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,14 +125,6 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		595C4FEE47FEBAE99FEC8EBA3A7294BF /* AlertBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +151,14 @@
 			);
 			name = "Pods-AlertBar_Tests";
 			path = "Target Support Files/Pods-AlertBar_Tests";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		78001211006781A3F0DFEE75E9AC2B3F /* Products */ = {
@@ -210,7 +210,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

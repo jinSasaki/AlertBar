@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapError(_ sender: AnyObject) {
-        AlertBar.showError(NSError(domain: "Page not found", code: 404, userInfo: nil), duration: 3)
+        AlertBar.show(error: NSError(domain: "Page not found", code: 404, userInfo: nil), duration: 3)
     }
     
     @IBAction func tapNotice(_ sender: AnyObject) {
