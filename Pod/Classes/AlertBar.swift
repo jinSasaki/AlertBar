@@ -19,15 +19,15 @@ public enum AlertBarType {
         get {
             switch self {
             case .success:
-                return AlertBarHelper.UIColorFromRGB(0x4CAF50)
+                return UIColor(0x4CAF50)
             case .error:
-                return AlertBarHelper.UIColorFromRGB(0xf44336)
+                return UIColor(0xf44336)
             case .notice:
-                return AlertBarHelper.UIColorFromRGB(0x2196F3)
+                return UIColor(0x2196F3)
             case .warning:
-                return AlertBarHelper.UIColorFromRGB(0xFFC107)
+                return UIColor(0xFFC107)
             case .info:
-                return AlertBarHelper.UIColorFromRGB(0x009688)
+                return UIColor(0x009688)
             case .custom(let backgroundColor, _):
                 return backgroundColor
             }
@@ -39,7 +39,7 @@ public enum AlertBarType {
             case .custom(_, let textColor):
                 return textColor
             default:
-                return AlertBarHelper.UIColorFromRGB(0xFFFFFF)
+                return UIColor(0xFFFFFF)
             }
         }
     }
@@ -130,16 +130,16 @@ open class AlertBar: UIView {
             })
     }
     
-    open class func showError(_ error: NSError, duration: Double = 2, completion: (() -> Void)? = nil) {
-        let code = error.code
+    open class func show(error: Error, duration: Double = 2, completion: (() -> Void)? = nil) {
+        let code = (error as NSError).code
         let localizedDescription = error.localizedDescription
-        self.show(.error, message: "(\(code)) " + localizedDescription)
+        self.show(.error, message: "(\(code)) " + localizedDescription, duration: duration, completion: completion)
     }
 }
 
-internal class AlertBarHelper {
-    class func UIColorFromRGB(_ rgbValue: UInt) -> UIColor {
-        return UIColor(
+internal extension UIColor {
+    convenience init(_ rgbValue: UInt) {
+        self.init(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
