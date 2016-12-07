@@ -1,6 +1,6 @@
 {
   "name": "AlertBar",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "summary": "An easy alert on status bar.",
   "homepage": "https://github.com/jinSasaki/AlertBar",
   "screenshots": "https://github.com/jinSasaki/AlertBar/raw/master/etc/demo.gif",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/jinSasaki/AlertBar.git",
-    "tag": "0.2.0"
+    "tag": "0.3.0"
   },
   "social_media_url": "https://twitter.com/sasakky_j",
   "platforms": {
