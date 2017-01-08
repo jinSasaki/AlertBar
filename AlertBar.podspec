@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = "0.3.1"
   s.summary          = "An easy alert on status bar."
   s.homepage         = "https://github.com/jinSasaki/AlertBar"
-  s.screenshots      = "https://github.com/jinSasaki/AlertBar/raw/master/etc/demo.gif"
+  s.screenshots      = "https://github.com/jinSasaki/AlertBar/raw/master/assets/demo.gif"
   s.license          = 'MIT'
   s.author           = { "Jin Sasaki" => "aysm47@gmail.com" }
   s.source           = { :git => "https://github.com/jinSasaki/AlertBar.git", :tag => s.version.to_s }
