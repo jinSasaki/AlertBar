@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "AlertBar"
-  s.version          = "0.3.0"
+  s.version          = "0.3.1"
   s.summary          = "An easy alert on status bar."
   s.homepage         = "https://github.com/jinSasaki/AlertBar"
   s.screenshots      = "https://github.com/jinSasaki/AlertBar/raw/master/etc/demo.gif"
@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/sasakky_j'
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'Sources/**/*'
 end
