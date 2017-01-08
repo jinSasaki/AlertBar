@@ -16,27 +16,27 @@ import AlertBar
 
 ### Show alert message
 AlertBar has default types:
-- Success
-- Error
-- Notice
-- Warning
-- Info
+- success
+- error
+- notice
+- warning
+- info
 
 ```
-AlertBar.show(.Success, message: "This is a Success message.")
+AlertBar.show(.success, message: "This is a Success message.")
 ```
 
 And you can customize the background and text colors of AlertBar.  
 Select `Custom` type and set background and text colors as UIColor:  `.Custom(BackgroundColor, TextColor)`
 
 ```
-AlertBar.show(.Custom(UIColor.lightGrayColor(), UIColor.blackColor()), message: "This is a Custom message.")
+AlertBar.show(.custom(.lightGray, UIColor.black), message: "This is a Custom message.")
 ```
 
 #### Alert duration
 AlertBar accepts to custom alert duration.
 ```
-AlertBar.show(.Success, message: "This is a Success message.", duration: 10)
+AlertBar.show(.success, message: "This is a Success message.", duration: 10)
 ```
 
 ### Custom Options
@@ -44,7 +44,7 @@ AlertBar.show(.Success, message: "This is a Success message.", duration: 10)
 AlertBar accepts to custom text alignment.  
 NOTE: This option is global.
 ```
-AlertBar.textAlignment = .Center
+AlertBar.textAlignment = .center
 ```
 
 ## Requirements
