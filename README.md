@@ -3,10 +3,11 @@
 [![Version](https://img.shields.io/cocoapods/v/AlertBar.svg?style=flat)](http://cocoapods.org/pods/AlertBar)
 [![License](https://img.shields.io/cocoapods/l/AlertBar.svg?style=flat)](http://cocoapods.org/pods/AlertBar)
 [![Platform](https://img.shields.io/cocoapods/p/AlertBar.svg?style=flat)](http://cocoapods.org/pods/AlertBar)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 An easy alert on status bar.
 
-![demo](./etc/demo.gif)
+![demo](./assets/demo.gif)
 
 ## Usage
 ### Import
@@ -30,7 +31,7 @@ And you can customize the background and text colors of AlertBar.
 Select `Custom` type and set background and text colors as UIColor:  `.Custom(BackgroundColor, TextColor)`
 
 ```
-AlertBar.show(.custom(.lightGray, UIColor.black), message: "This is a Custom message.")
+AlertBar.show(.custom(.lightGray, .black), message: "This is a Custom message.")
 ```
 
 #### Alert duration
@@ -49,18 +50,27 @@ AlertBar.textAlignment = .center
 
 ## Requirements
 
-- Swift 3.0
-- iOS 8.0
+- Swift 3.x
+- iOS 8.0+
 - ARC
 
 ## Installation
-[!] AlertBar 0.2.0 requires CocoaPods 1.1.0
+### CocoaPods
 
-AlertBar is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+AlertBar is available through [CocoaPods](http://cocoapods.org).
+To install it, simply add the following line to your Podfile:
 
 ```ruby
 pod "AlertBar"
+```
+
+### Carthage
+
+AlertBar is available through [Carthage](https://github.com/Carthage/Carthage) since `0.3.1`.
+To install it, simply add the following line to your Cartfile:
+
+```
+github "jinSasaki/AlertBar"
 ```
 
 ## Author
