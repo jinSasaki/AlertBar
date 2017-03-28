@@ -95,11 +95,11 @@ open class AlertBar: UIView {
             window = UIWindow(frame: CGRect(x: 0, y: 0, width: height, height: width))
             let sign: CGFloat = orientation == .landscapeLeft ? -1 : 1
             let d = fabs(width - height) / 2
-            baseView.transform = CGAffineTransform(rotationAngle: sign * CGFloat(M_PI) / 2).translatedBy(x: sign * d, y: sign * d)
+            baseView.transform = CGAffineTransform(rotationAngle: sign * CGFloat.pi / 2).translatedBy(x: sign * d, y: sign * d)
         } else {
             window = UIWindow(frame: CGRect(x: 0, y: 0, width: width, height: height))
             if orientation == .portraitUpsideDown {
-                baseView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+                baseView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
             }
         }
         window.isUserInteractionEnabled = false
