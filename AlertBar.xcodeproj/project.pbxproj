@@ -10,7 +10,7 @@
 		93A4C4761E223B0B00C0962F /* AlertBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A4C46C1E223B0B00C0962F /* AlertBar.framework */; };
 		93A4C47B1E223B0B00C0962F /* AlertBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4C47A1E223B0B00C0962F /* AlertBarTests.swift */; };
 		93A4C47D1E223B0B00C0962F /* AlertBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 93A4C46F1E223B0B00C0962F /* AlertBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		93A4C4A91E223DD700C0962F /* AlertBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4C4A81E223DD700C0962F /* AlertBar.swift */; };
+		93C0F48D1E8AC52800F15353 /* AlertBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0F48C1E8AC52800F15353 /* AlertBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,7 @@
 		93A4C4751E223B0B00C0962F /* AlertBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4C47A1E223B0B00C0962F /* AlertBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBarTests.swift; sourceTree = "<group>"; };
 		93A4C47C1E223B0B00C0962F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4C4A81E223DD700C0962F /* AlertBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertBar.swift; sourceTree = "<group>"; };
+		93C0F48C1E8AC52800F15353 /* AlertBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				93A4C46F1E223B0B00C0962F /* AlertBar.h */,
-				93A4C4A71E223DD700C0962F /* Sources */,
+				93C0F48B1E8AC52800F15353 /* Sources */,
 				93A4C4701E223B0B00C0962F /* Info.plist */,
 			);
 			path = AlertBar;
@@ -89,13 +89,13 @@
 			path = AlertBarTests;
 			sourceTree = "<group>";
 		};
-		93A4C4A71E223DD700C0962F /* Sources */ = {
+		93C0F48B1E8AC52800F15353 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				93A4C4A81E223DD700C0962F /* AlertBar.swift */,
+				93C0F48C1E8AC52800F15353 /* AlertBar.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -208,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A4C4A91E223DD700C0962F /* AlertBar.swift in Sources */,
+				93C0F48D1E8AC52800F15353 /* AlertBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

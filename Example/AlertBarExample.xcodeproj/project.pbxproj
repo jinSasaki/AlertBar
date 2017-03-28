@@ -12,7 +12,7 @@
 		93A4C4981E223C7B00C0962F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4961E223C7B00C0962F /* Main.storyboard */; };
 		93A4C49A1E223C7B00C0962F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4991E223C7B00C0962F /* Assets.xcassets */; };
 		93A4C49D1E223C7B00C0962F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C49B1E223C7B00C0962F /* LaunchScreen.storyboard */; };
-		93A4C4A61E223CDB00C0962F /* AlertBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4C4A51E223CDB00C0962F /* AlertBar.swift */; };
+		93C0F48A1E8AC48500F15353 /* AlertBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0F4891E8AC48500F15353 /* AlertBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		93A4C4991E223C7B00C0962F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93A4C49C1E223C7B00C0962F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93A4C49E1E223C7B00C0962F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4C4A51E223CDB00C0962F /* AlertBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertBar.swift; sourceTree = "<group>"; };
+		93C0F4891E8AC48500F15353 /* AlertBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertBar.swift; path = ../../../AlertBar/Sources/AlertBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 		93A4C4A41E223CDB00C0962F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				93A4C4A51E223CDB00C0962F /* AlertBar.swift */,
+				93C0F4891E8AC48500F15353 /* AlertBar.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A4C4951E223C7B00C0962F /* ViewController.swift in Sources */,
-				93A4C4A61E223CDB00C0962F /* AlertBar.swift in Sources */,
+				93C0F48A1E8AC48500F15353 /* AlertBar.swift in Sources */,
 				93A4C4931E223C7B00C0962F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
