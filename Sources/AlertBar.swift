@@ -68,7 +68,7 @@ open class AlertBar: UIView {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    dynamic fileprivate func handleRotate(_ notification: Notification) {
+    @objc fileprivate func handleRotate(_ notification: Notification) {
         self.removeFromSuperview()
         AlertBar.alertBars = []
     }
