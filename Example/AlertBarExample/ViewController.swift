@@ -11,29 +11,29 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func tapSuccess(_ sender: AnyObject) {
-        AlertBar.show(.success, message: "This is a Success message.")
+        AlertBar.shared.show(type: .success, message: "This is a Success message.")
     }
 
     @IBAction func tapError(_ sender: AnyObject) {
-        AlertBar.show(error: NSError(domain: "Page not found", code: 404, userInfo: nil), duration: 3)
+        AlertBar.shared.show(error: NSError(domain: "Page not found", code: 404, userInfo: nil), duration: 3)
     }
 
     @IBAction func tapNotice(_ sender: AnyObject) {
-        AlertBar.show(.notice, message: "This is a Notice message.", completion: { () -> Void in
+        AlertBar.shared.show(type: .notice, message: "This is a Notice message.", completion: { () -> Void in
             print("Noticed")
         })
     }
 
     @IBAction func tapWarning(_ sender: AnyObject) {
-        AlertBar.show(.warning, message: "This is a Warning message.")
+        AlertBar.shared.show(type: .warning, message: "This is a Warning message.")
     }
 
     @IBAction func tapInfo(_ sender: AnyObject) {
-        AlertBar.show(.info, message: "This is an Info message.")
+        AlertBar.shared.show(type: .info, message: "This is an Info message.", option: .init(shouldConsiderSafeArea: false, isStretchable: true, textAlignment: .right))
     }
 
     @IBAction func tapCustom(_ sender: AnyObject) {
-        AlertBar.show(.custom(UIColor.lightGray, UIColor.black), message: "This is a Custom message.", duration: 5)
+        AlertBar.shared.show(type: .custom(UIColor.lightGray, UIColor.black), message: "This is a Custom message. \nlong \nlong \nlong \nlong \nlong \nlong \nlong message", duration: 5, option: .init(isStretchable: true, textAlignment: .center))
     }
 
     override var prefersStatusBarHidden : Bool {
