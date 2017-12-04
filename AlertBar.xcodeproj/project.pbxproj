@@ -73,8 +73,8 @@
 		93A4C46E1E223B0B00C0962F /* AlertBar */ = {
 			isa = PBXGroup;
 			children = (
-				93A4C46F1E223B0B00C0962F /* AlertBar.h */,
 				93C0F48B1E8AC52800F15353 /* Sources */,
+				93A4C46F1E223B0B00C0962F /* AlertBar.h */,
 				93A4C4701E223B0B00C0962F /* Info.plist */,
 			);
 			path = AlertBar;
