@@ -94,12 +94,6 @@ is set to `false` by default.
 #### TextAlignment
 AlertBar accepts to custom text alignment.
 
-## Requirements
-
-- Swift 3.x
-- iOS 8.0+
-- ARC
-
 ## Installation
 ### CocoaPods
 
