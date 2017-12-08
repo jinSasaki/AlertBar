@@ -7,7 +7,9 @@
 
 An easy alert on status bar.
 
-![demo](./assets/demo.gif)
+| Demo |
+| :---: |
+| ![demo](./assets/demo.gif) |
 
 ## Usage
 ### Import
@@ -23,30 +25,74 @@ AlertBar has default types:
 - warning
 - info
 
-```
-AlertBar.show(.success, message: "This is a Success message.")
+```swift
+AlertBar.show(type: .success, message: "This is a Success message.")
 ```
 
 And you can customize the background and text colors of AlertBar.  
-Select `Custom` type and set background and text colors as UIColor:  `.Custom(BackgroundColor, TextColor)`
+Select `custom` type and set background and text colors as UIColor:  `.custom(BackgroundColor, TextColor)`
 
-```
-AlertBar.show(.custom(.lightGray, .black), message: "This is a Custom message.")
+```swift
+AlertBar.show(type: .custom(.lightGray, .black), message: "This is a Custom message.")
 ```
 
 #### Alert duration
 AlertBar accepts to custom alert duration.
-```
-AlertBar.show(.success, message: "This is a Success message.", duration: 10)
+```swift
+AlertBar.show(type: .success, message: "This is a Success message.", duration: 10)
 ```
 
-### Custom Options
+### AlertBar Options
+
+AlertBar accepts options follows:
+
+- Consider Safe Area
+- Stretch bar
+- TextAlignment
+
+Use `setDefault` method to set default option.
+```swift
+let option = AlertBar.Option(
+    shouldConsiderSafeArea: true, 
+    isStretchable: true, 
+    textAlignment: .center
+)
+AlertBar.setDefault(option: option)
+```
+
+Or set parameter of `show` method to each AlertBar.
+```swift
+let option = AlertBar.Option(
+    shouldConsiderSafeArea: true, 
+    isStretchable: true, 
+    textAlignment: .center
+)
+AlertBar.show(type: .success, message: "This is AlertBar!", option: option)
+```
+
+### Consider Safe Area
+The Safe Area is adopted from iOS 11 and AlertBar can change whether to consider SafeArea or not.
+
+`AlertBar.Option#shouldConsiderSafeArea: Bool`
+is set to `true` by default.
+
+| `shouldConsiderSafeArea == true` | `shouldConsiderSafeArea == false` |
+| :---: | :---: |
+| ![true](./assets/shouldConsiderSafeArea_true.png) | ![false](./assets/shouldConsiderSafeArea_false.png) |
+
+### Stretch bar
+AlertBar can stretch the bar if the message needs the multi lines.
+
+`AlertBar.Option#isStretchable: Bool`
+is set to `false` by default.
+
+| `isStretchable == true` | `isStretchable == false` |
+| :---: | :---: |
+| ![true](./assets/isStretchable_true.png) | ![false](./assets/isStretchable_false.png) |
+
+
 #### TextAlignment
-AlertBar accepts to custom text alignment.  
-NOTE: This option is global.
-```
-AlertBar.textAlignment = .center
-```
+AlertBar accepts to custom text alignment.
 
 ## Requirements
 
