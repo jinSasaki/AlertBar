@@ -117,10 +117,10 @@ public final class AlertBar {
         }
     }
 
-    public func show(error: Error, duration: TimeInterval = 2, completion: (() -> Void)? = nil) {
+    public func show(error: Error, duration: TimeInterval = 2, option: Option? = nil, completion: (() -> Void)? = nil) {
         let code = (error as NSError).code
         let localizedDescription = error.localizedDescription
-        show(type: .error, message: "(\(code)) \(localizedDescription)", duration: duration, completion: completion)
+        show(type: .error, message: "(\(code)) \(localizedDescription)", duration: duration, option: option, completion: completion)
     }
 }
 
