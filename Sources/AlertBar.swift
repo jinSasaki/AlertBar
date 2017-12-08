@@ -132,6 +132,22 @@ extension AlertBar: AlertBarViewDelegate {
    }
 }
 
+// MARK: - Static helpers
+
+public extension AlertBar {
+    public static func setDefault(option: Option) {
+        shared.option = option
+    }
+
+    public static func show(type: AlertBarType, message: String, duration: TimeInterval = 2, option: Option? = nil, completion: (() -> Void)? = nil) {
+        shared.show(type: type, message: message, duration: duration, option: option, completion: completion)
+    }
+
+    public static func show(error: Error, duration: TimeInterval = 2, option: Option? = nil, completion: (() -> Void)? = nil) {
+        shared.show(error: error, duration: duration, option: option, completion: completion)
+    }
+}
+
 protocol AlertBarViewDelegate: class {
     func alertBarViewHandleRotate(_ alertBarView: AlertBarView)
 }
