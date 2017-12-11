@@ -29,11 +29,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tapInfo(_ sender: AnyObject) {
-        AlertBar.show(type: .info, message: "This is an Info message.", option: .init(shouldConsiderSafeArea: false, isStretchable: true, textAlignment: .right))
+        AlertBar.show(type: .info, message: "This is an Info message.", options: .init(shouldConsiderSafeArea: false, isStretchable: true, textAlignment: .right))
     }
 
     @IBAction func tapCustom(_ sender: AnyObject) {
-        AlertBar.show(type: .custom(UIColor.lightGray, UIColor.black), message: "This is a Custom message. \nlong \nlong \nlong \nlong \nlong \nlong \nlong message", duration: 5, option: .init(isStretchable: true, textAlignment: .center))
+        AlertBar.show(type: .custom(UIColor.lightGray, UIColor.black), message: "This is a Custom message. \nlong \nlong \nlong \nlong \nlong \nlong \nlong message", duration: 5, options: .init(isStretchable: true, textAlignment: .center))
     }
 
     override var prefersStatusBarHidden : Bool {
