@@ -37,9 +37,9 @@ public final class AlertBar {
     public static let shared = AlertBar()
     private static let kWindowLevel: CGFloat = UIWindowLevelStatusBar + 1
     private var alertBarViews: [AlertBarView] = []
-    private var option = Option(shouldConsiderSafeArea: true, isStretchable: false, textAlignment: .left)
+    private var options = Options(shouldConsiderSafeArea: true, isStretchable: false, textAlignment: .left)
 
-    public struct Option {
+    public struct Options {
         let shouldConsiderSafeArea: Bool
         let isStretchable: Bool
         let textAlignment: NSTextAlignment
@@ -55,15 +55,15 @@ public final class AlertBar {
         }
     }
 
-    public func setDefault(option: Option) {
-        self.option = option
+    public func setDefault(options: Options) {
+        self.options = options
     }
 
-    public func show(type: AlertBarType, message: String, duration: TimeInterval = 2, option: Option? = nil, completion: (() -> Void)? = nil) {
+    public func show(type: AlertBarType, message: String, duration: TimeInterval = 2, options: Options? = nil, completion: (() -> Void)? = nil) {
         // Hide all before new one is shown.
         alertBarViews.forEach({ $0.hide() })
 
-        let currentOption = option ?? self.option
+        let currentOptions = options ?? self.options
 
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
@@ -99,9 +99,9 @@ public final class AlertBar {
         alertBarView.backgroundColor = type.backgroundColor
         alertBarView.messageLabel.textColor = type.textColor
         alertBarView.messageLabel.text = message
-        alertBarView.messageLabel.numberOfLines = currentOption.isStretchable ? 0 : 1
-        alertBarView.messageLabel.textAlignment = currentOption.textAlignment
-        alertBarView.fit(safeArea: currentOption.shouldConsiderSafeArea ? safeArea : .zero)
+        alertBarView.messageLabel.numberOfLines = currentOptions.isStretchable ? 0 : 1
+        alertBarView.messageLabel.textAlignment = currentOptions.textAlignment
+        alertBarView.fit(safeArea: currentOptions.shouldConsiderSafeArea ? safeArea : .zero)
         alertBarViews.append(alertBarView)
         baseView.addSubview(alertBarView)
 
@@ -117,10 +117,10 @@ public final class AlertBar {
         }
     }
 
-    public func show(error: Error, duration: TimeInterval = 2, option: Option? = nil, completion: (() -> Void)? = nil) {
+    public func show(error: Error, duration: TimeInterval = 2, options: Options? = nil, completion: (() -> Void)? = nil) {
         let code = (error as NSError).code
         let localizedDescription = error.localizedDescription
-        show(type: .error, message: "(\(code)) \(localizedDescription)", duration: duration, option: option, completion: completion)
+        show(type: .error, message: "(\(code)) \(localizedDescription)", duration: duration, options: options, completion: completion)
     }
 }
 
@@ -135,16 +135,16 @@ extension AlertBar: AlertBarViewDelegate {
 // MARK: - Static helpers
 
 public extension AlertBar {
-    public static func setDefault(option: Option) {
-        shared.option = option
+    public static func setDefault(options: Options) {
+        shared.options = options
     }
 
-    public static func show(type: AlertBarType, message: String, duration: TimeInterval = 2, option: Option? = nil, completion: (() -> Void)? = nil) {
-        shared.show(type: type, message: message, duration: duration, option: option, completion: completion)
+    public static func show(type: AlertBarType, message: String, duration: TimeInterval = 2, options: Options? = nil, completion: (() -> Void)? = nil) {
+        shared.show(type: type, message: message, duration: duration, options: options, completion: completion)
     }
 
-    public static func show(error: Error, duration: TimeInterval = 2, option: Option? = nil, completion: (() -> Void)? = nil) {
-        shared.show(error: error, duration: duration, option: option, completion: completion)
+    public static func show(error: Error, duration: TimeInterval = 2, options: Options? = nil, completion: (() -> Void)? = nil) {
+        shared.show(error: error, duration: duration, options: options, completion: completion)
     }
 }
 
