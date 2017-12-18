@@ -13,7 +13,7 @@ An easy alert on status bar.
 
 ## Usage
 ### Import
-```
+```swift
 import AlertBar
 ```
 
@@ -50,30 +50,30 @@ AlertBar accepts options follows:
 - Stretch bar
 - TextAlignment
 
-Use `setDefault` method to set default option.
+Use `setDefault` method to set default options.
 ```swift
-let option = AlertBar.Option(
+let options = AlertBar.Options(
     shouldConsiderSafeArea: true, 
     isStretchable: true, 
     textAlignment: .center
 )
-AlertBar.setDefault(option: option)
+AlertBar.setDefault(options: options)
 ```
 
 Or set parameter of `show` method to each AlertBar.
 ```swift
-let option = AlertBar.Option(
+let options = AlertBar.Options(
     shouldConsiderSafeArea: true, 
     isStretchable: true, 
     textAlignment: .center
 )
-AlertBar.show(type: .success, message: "This is AlertBar!", option: option)
+AlertBar.show(type: .success, message: "This is AlertBar!", options: options)
 ```
 
 ### Consider Safe Area
 The Safe Area is adopted from iOS 11 and AlertBar can change whether to consider SafeArea or not.
 
-`AlertBar.Option#shouldConsiderSafeArea: Bool`
+`AlertBar.Options#shouldConsiderSafeArea: Bool`
 is set to `true` by default.
 
 | `shouldConsiderSafeArea == true` | `shouldConsiderSafeArea == false` |
@@ -83,7 +83,7 @@ is set to `true` by default.
 ### Stretch bar
 AlertBar can stretch the bar if the message needs the multi lines.
 
-`AlertBar.Option#isStretchable: Bool`
+`AlertBar.Options#isStretchable: Bool`
 is set to `false` by default.
 
 | `isStretchable == true` | `isStretchable == false` |
