@@ -55,7 +55,8 @@ Use `setDefault` method to set default options.
 let options = AlertBar.Options(
     shouldConsiderSafeArea: true, 
     isStretchable: true, 
-    textAlignment: .center
+    textAlignment: .center,
+    font: UIFont.systemFont(ofSize: 14.0, weight: .medium)
 )
 AlertBar.setDefault(options: options)
 ```
@@ -65,7 +66,8 @@ Or set parameter of `show` method to each AlertBar.
 let options = AlertBar.Options(
     shouldConsiderSafeArea: true, 
     isStretchable: true, 
-    textAlignment: .center
+    textAlignment: .center,
+    font: UIFont.systemFont(ofSize: 14.0, weight: .medium)
 )
 AlertBar.show(type: .success, message: "This is AlertBar!", options: options)
 ```
