@@ -185,7 +185,6 @@ internal class AlertBarView: UIView {
         super.init(frame: frame)
         let margin = AlertBarView.kMargin
         messageLabel.frame = CGRect(x: margin, y: margin, width: frame.width - margin*2, height: frame.height - margin*2)
-        messageLabel.font = UIFont.systemFont(ofSize: 12)
         addSubview(messageLabel)
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleRotate(_:)), name: .UIDeviceOrientationDidChange, object: nil)
