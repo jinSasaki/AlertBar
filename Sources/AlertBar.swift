@@ -43,15 +43,18 @@ public final class AlertBar {
         let shouldConsiderSafeArea: Bool
         let isStretchable: Bool
         let textAlignment: NSTextAlignment
+        let font: UIFont
 
         public init(
             shouldConsiderSafeArea: Bool = true,
             isStretchable: Bool = false,
-            textAlignment: NSTextAlignment = .left) {
+            textAlignment: NSTextAlignment = .left,
+            font: UIFont = UIFont.systemFont(ofSize: 12.0)) {
 
             self.shouldConsiderSafeArea = shouldConsiderSafeArea
             self.isStretchable = isStretchable
             self.textAlignment = textAlignment
+            self.font = font
         }
     }
 
@@ -104,6 +107,7 @@ public final class AlertBar {
         alertBarView.messageLabel.text = message
         alertBarView.messageLabel.numberOfLines = currentOptions.isStretchable ? 0 : 1
         alertBarView.messageLabel.textAlignment = currentOptions.textAlignment
+        alertBarView.messageLabel.font = currentOptions.font
         alertBarView.fit(safeArea: currentOptions.shouldConsiderSafeArea ? safeArea : .zero)
         alertBarViews.append(alertBarView)
         baseView.addSubview(alertBarView)
@@ -181,7 +185,6 @@ internal class AlertBarView: UIView {
         super.init(frame: frame)
         let margin = AlertBarView.kMargin
         messageLabel.frame = CGRect(x: margin, y: margin, width: frame.width - margin*2, height: frame.height - margin*2)
-        messageLabel.font = UIFont.systemFont(ofSize: 12)
         addSubview(messageLabel)
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleRotate(_:)), name: .UIDeviceOrientationDidChange, object: nil)
