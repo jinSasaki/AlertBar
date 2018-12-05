@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "AlertBar"
-  s.version          = "0.4.2"
+  s.version          = "0.4.3"
   s.summary          = "An easy alert on status bar."
   s.homepage         = "https://github.com/jinSasaki/AlertBar"
   s.screenshots      = "https://github.com/jinSasaki/AlertBar/raw/master/assets/demo.gif"
